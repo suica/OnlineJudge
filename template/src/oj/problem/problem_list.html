@@ -60,6 +60,16 @@
                                     <span aria-hidden="true">&larr;</span> 上一页</a></li>
                             
                             {% endif %}
+                            {% for i in paginator.page_range %}
+
+                            	{% if i = page  %}
+                            		{{i}}
+                            	{% else %}
+                            	<a href="/problems/{{ i }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}">
+                                    {{i}}</a>
+                            	{% endif %}
+							     
+							 {% endfor %}
                             
                             {% if next_page %}
                             	<li class="next"><a

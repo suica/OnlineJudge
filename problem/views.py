@@ -420,7 +420,7 @@ def problem_list_page(request, page=1):
             return error_page(request, u"标签不存在")
         problems = tag.problem_set.all().filter(visible=True)
 
-    paginator = Paginator(problems, 5)
+    paginator = Paginator(problems, 3)
     try:
         current_page = paginator.page(int(page))
     except Exception:
@@ -447,5 +447,6 @@ def problem_list_page(request, page=1):
     return render(request, "oj/problem/problem_list.html",
                   {"problems": current_page, "page": int(page),
                    "previous_page": previous_page, "next_page": next_page,"page_count":paginator.num_pages,
+                   "paginator":paginator,
                    "keyword": keyword, "tag": tag_text,
                    "tags": tags, "difficulty_order": difficulty_order})
