@@ -52,14 +52,23 @@
                     <nav>
                         <ul class="pager">
                             {% if previous_page %}
+                            <li class="previous"><a
+                                        href="/problems/1/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}">
+                                    <span aria-hidden="true">&larr;</span> 第一页</a></li>
                                 <li class="previous"><a
                                         href="/problems/{{ previous_page }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}">
                                     <span aria-hidden="true">&larr;</span> 上一页</a></li>
+                            
                             {% endif %}
+                            
                             {% if next_page %}
+                            	<li class="next"><a
+                                        href="/problems/{{ page_count }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}">最后一页 <span
+                                        aria-hidden="true">&rarr;</span></a></li>
                                 <li class="next"><a
                                         href="/problems/{{ next_page }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}">下一页 <span
                                         aria-hidden="true">&rarr;</span></a></li>
+                                
                             {% endif %}
                         </ul>
                     </nav>
@@ -91,5 +100,6 @@
 {% endblock %}
 
 {% block js_block %}
+
 
 {% endblock %}

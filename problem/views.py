@@ -420,16 +420,18 @@ def problem_list_page(request, page=1):
             return error_page(request, u"标签不存在")
         problems = tag.problem_set.all().filter(visible=True)
 
-    paginator = Paginator(problems, 40)
+    paginator = Paginator(problems, 5)
     try:
         current_page = paginator.page(int(page))
     except Exception:
         return error_page(request, u"不存在的页码")
 
-    previous_page = next_page = None
+    previous_page = next_page =  None
+
+    # print page_count
 
     try:
-        previous_page = current_page.previous_page_number()
+    	previous_page = current_page.previous_page_number()
     except Exception:
         pass
 
@@ -444,6 +446,6 @@ def problem_list_page(request, page=1):
 
     return render(request, "oj/problem/problem_list.html",
                   {"problems": current_page, "page": int(page),
-                   "previous_page": previous_page, "next_page": next_page,
+                   "previous_page": previous_page, "next_page": next_page,"page_count":paginator.num_pages,
                    "keyword": keyword, "tag": tag_text,
                    "tags": tags, "difficulty_order": difficulty_order})
