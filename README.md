@@ -32,7 +32,7 @@ License: The Star And Thank Author License
 
 TODO：
 
- - enhancement:分页
+ - <del>enhancement:分页</del> (2017.6.16完成)
  - enhancement:昵称系统
  - bug:普通管理员在编辑比赛题面时出现"比赛不存在"
  - enhancement: 题目通过数据的统计
