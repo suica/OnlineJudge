@@ -39,7 +39,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["id", "username", "real_name", "email", "admin_type",
-                  "create_time", "last_login", "two_factor_auth", "openapi_appkey", "is_forbidden"]
+                  "create_time", "last_login", "two_factor_auth", "openapi_appkey", "is_forbidden",]
 
 
 class EditUserSerializer(serializers.Serializer):
@@ -80,6 +80,8 @@ class EditUserProfileSerializer(serializers.Serializer):
     school = serializers.CharField(max_length=200, required=False, allow_blank=True, default='')
     phone_number = serializers.CharField(max_length=15, required=False, allow_blank=True, default='')
     student_id = serializers.CharField(max_length=15, required=False, allow_blank=True, default="")
+    # 昵称
+    nickname = serializers.CharField(max_length=50, required=False, allow_blank=True, default="")
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -87,7 +89,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
         fields = ["avatar", "blog", "mood", "hduoj_username", "bestcoder_username", "codeforces_username",
-                  "rank", "accepted_number", "submissions_number", "problems_status", "phone_number", "school", "student_id"]
+                  "rank", "accepted_number", "submissions_number", "problems_status", "phone_number", "school", "student_id", "nickname"]
 
 
 class TwoFactorAuthCodeSerializer(serializers.Serializer):

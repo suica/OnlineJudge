@@ -24,20 +24,22 @@
                     <input name="username" type="text" class="form-control"
                            value="{{ request.user.username }}" readonly>
                 </div>
-                <div class="form-group col-md-6"><label>真实姓名</label>
-                    <input name="real_name" type="text" class="form-control"
-                           value="{{ request.user.real_name }}" readonly>
+                <div class="form-group col-md-6"><label>昵称</label>
+                    <input name="nickname" type="text" id= "nickname" class="form-control"
+                           value="{{ request.userprofile.nickname }}">
                 </div>
+
             </div>
+
             <div class="row">
                 <div class="form-group col-md-6"><label>电子邮箱</label>
                     <input name="email" type="email" class="form-control"
                            value="{{ request.user.email }}" readonly>
                 </div>
-                <div class="form-group col-md-6"><label>手机</label>
-                    <input name="phone_number" type="text" maxlength="11" id="phone"
-                           class="form-control"
-                           value="{% if request.user.userprofile.phone_number %}{{ request.user.userprofile.phone_number }}{% endif %}">
+
+                <div class="form-group col-md-6"><label>真实姓名</label>
+                    <input name="real_name" type="text" class="form-control"
+                           value="{{ request.user.real_name }}" readonly>
                 </div>
                 <div class="help-block with-errors"></div>
             </div>
@@ -76,6 +78,11 @@
 
                     <div class="help-block with-errors"></div>
 
+                </div>
+                <div class="form-group col-md-12" hidden><label>手机</label>
+                    <input name="phone_number" type="text" maxlength="11" id="phone"
+                           class="form-control"
+                           value="{% if request.user.userprofile.phone_number %}{{ request.user.userprofile.phone_number }}{% endif %}">
                 </div>
                 <div class="form-group col-md-12"><label>blog</label>
                     <input name="blog" type="url" class="form-control" id="blog"

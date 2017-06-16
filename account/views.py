@@ -299,7 +299,9 @@ class UserProfileAPIView(APIView):
                 user_profile.school = data["school"]
                 user_profile.student_id = data["student_id"]
                 user_profile.phone_number = data["phone_number"]
+                user_profile.nickname = data["nickname"]
             user_profile.save()
+
             return success_response(u"修改成功")
         else:
             return serializer_invalid_response(serializer)

@@ -73,6 +73,7 @@ class UserProfile(models.Model):
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     school = models.CharField(max_length=200, blank=True, null=True)
     student_id = models.CharField(max_length=15, blank=True, null=True)
+    nickname = models.CharField(max_length=50, blank=True, null=True)
 
     def add_accepted_problem_number(self):
         self.accepted_problem_number += 1

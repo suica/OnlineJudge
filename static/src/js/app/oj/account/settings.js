@@ -9,6 +9,8 @@ require(["jquery", "bsAlert", "csrfToken", "validator"], function ($, bsAlert, c
             var mood = $("#mood").val();
             var school = $("#school").val();
             var student_id = $("#student_id").val();
+            var nickname = $("#nickname").val();
+            // alert("!!!")
             $.ajax({
                 beforeSend: csrfTokenHeader,
                 url: "/api/account/userprofile/",
@@ -20,7 +22,8 @@ require(["jquery", "bsAlert", "csrfToken", "validator"], function ($, bsAlert, c
                     blog: blog,
                     mood: mood,
                     school: school,
-                    student_id: student_id
+                    student_id: student_id,
+                    nickname:nickname,
                 },
                 dataType: "json",
                 method: "put",
@@ -41,4 +44,3 @@ require(["jquery", "bsAlert", "csrfToken", "validator"], function ($, bsAlert, c
         }
     });
 });
-

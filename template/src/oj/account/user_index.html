@@ -20,9 +20,12 @@
 
                 </h2>
                 {% if user.userprofile.mood %}
-                    <p id="user-mood">{{ user.userprofile.mood }}</p>
+                    <p id="user-mood"> {{ user.userprofile.mood }}</p>
                 {% endif %}
-                
+                {% if user.userprofile.nickname %}
+                    <h5 id=""> <em>{{ user.userprofile.nickname }}</em></h5>
+                {% endif %}
+
             </div>
             <div class="list-group col-lg-9">
                 {% if user.userprofile.school %}
@@ -62,7 +65,7 @@
                     </a>
                 </p>
                 {% endif %}
-                
+
                 <p class="list-group-item">
                     <span class="glyphicon glyphicon-calendar"></span>
                     {{ user.create_time }}
@@ -73,7 +76,7 @@
                         <strong id="user-data-number">{{ user.userprofile.rank }}</strong>
                         <span id="user-data-text">Rank</span>
                     </div>
-                    
+
                     <div class="col-lg-6 text-center">
                         <strong id="user-data-number">{{ user.userprofile.accepted_number }}</strong>
                         <span id="user-data-text">AC</span>
@@ -87,7 +90,7 @@
             </div>
         </div>
         <div class="col-lg-8">
-            
+
         </div>
     </div>
 {% endblock %}
