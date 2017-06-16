@@ -37,9 +37,11 @@ class CreateProblemSerializer(serializers.Serializer):
     visible = serializers.BooleanField()
 
 
+
 class ProblemTagSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProblemTag
+        fields = '__all__'
 
 
 class BaseProblemSerializer(serializers.ModelSerializer):
@@ -57,6 +59,7 @@ class BaseProblemSerializer(serializers.ModelSerializer):
 class ProblemSerializer(BaseProblemSerializer):
     class Meta:
         model = Problem
+        fields = '__all__'
 
 
 class OpenAPIProblemSerializer(BaseProblemSerializer):
