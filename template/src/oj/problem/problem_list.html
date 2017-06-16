@@ -49,30 +49,37 @@
                         {% endfor %}
                         </tbody>
                     </table>
+                    <center>
                     <nav>
-                        <ul class="pager">
+                        <ul>
                             <nav aria-label="Page navigation">
-							  <ul class="pagination">
-							    <li>
+							  <ul class="pagination pagination-sm">
 											    {% if previous_page %}
+											    <li>
 											    <a href="/problems/1/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}"><span
 				                                        aria-hidden="true">&laquo;</span></a>
+				                                        </li>
+				                                        <li>
 											    <a href="/problems/{{ previous_page }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}"><span
 				                                        aria-hidden="true">&lsaquo;</span></a>
+				                                        </li>
 												
 											    {% else %}
+											    <li>
 											    <a class="disabled" href=""><span
 				                                        aria-hidden="true">&laquo;</span></a>
+				                                        </li>
+				                                <li >
 												<a class="disabled" href=""><span
 				                                        aria-hidden="true">&lsaquo;</span></a>
+				                                </li>
 											    {% endif %}
 							    
-							    </li>
 							    {% for i in page_display_range %}
 
 		                            	{% if i = page %}
-		                            	<li>
-		                            	<a class="active" href="/problems/{{ i }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}">
+		                            	<li class="active">
+		                            	<a  href="/problems/{{ i }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}">
 		                                    {{i}}</a>
 		                                    </li>
 		                            	{% else %}
@@ -83,26 +90,29 @@
 		                            	{% endif %}
 							     
 								 {% endfor %}
-							    <li>
+
 
 							    {% if next_page %}
+							    <li>
 							    <a href="/problems/{{ next_page }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}"><span
                                         aria-hidden="true">&rsaquo;</span></a>
+                                        </li><li>
 								<a href="/problems/{{ page_count }}/{% if keyword %}?keyword={{ keyword }}{% endif %}{% if tag %}?tag={{ tag }}{% endif %}"><span
-                                        aria-hidden="true">&raquo;</span></a>
+                                        aria-hidden="true">&raquo;</span></a></li>
 							    {% else %}
+							    <li>
 							    <a class="disabled" href=""><span
-                                        aria-hidden="true">&rsaquo;</span></a>
+                                        aria-hidden="true">&rsaquo;</span></a></li>
+                                        <li>
 								<a class="disabled" href=""><span
-                                        aria-hidden="true">&raquo;</span></a>
+                                        aria-hidden="true">&raquo;</span></a></li>
 							    {% endif %}
-							      
-							    </li>
+
 							  </ul>
 							</nav>
                             
                         </ul>
-                    </nav>
+                    </nav></center>
                 </div>
             </div>
 
