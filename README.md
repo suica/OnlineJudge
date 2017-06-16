@@ -34,9 +34,10 @@ TODO：
 
  - <del>enhancement:分页</del> (2017.6.16完成)
  - enhancement:昵称系统
- - bug:普通管理员在编辑比赛题面时出现"比赛不存在"
+ - <del>bug:普通管理员在编辑比赛题面时出现"比赛不存在"</del> (2017.6.16完成)
  - enhancement: 题目通过数据的统计
  - enhancement:比赛中的"Clarification"即"澄清"系统
  - enhancement:讨论系统
+ - enhancement:赋予比赛创建者查看编辑比赛所有题目的权限
  
  
