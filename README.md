@@ -33,8 +33,11 @@ License: The Star And Thank Author License
 TODO：
 
  - <del>enhancement:分页</del> (2017.6.16完成)
+ ![pic](https://github.com/suica/OnlineJudge/blob/master/screen_capture/page.png)
  - <del>bug:普通管理员在编辑比赛题面时出现"比赛不存在"</del> (2017.6.16完成)
  - enhancement:昵称系统 (2017.6.16初步实现)
+ ![pic](https://github.com/suica/OnlineJudge/blob/master/screen_capture/nickname1.png)
+ ![pic](https://github.com/suica/OnlineJudge/blob/master/screen_capture/nickname2.png)
  - enhancement:赋予比赛创建者查看编辑比赛所有题目的权限
  - enhancement: 题目通过数据的统计
  - enhancement:比赛中的"Clarification"即"澄清"系统
