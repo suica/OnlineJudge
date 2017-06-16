@@ -237,7 +237,7 @@ class ContestProblemAdminAPIView(APIView):
                 return error_response(u"该比赛题目不存在！")
 
             contest = Contest.objects.get(id=contest_problem.contest_id)
-            if request.user.admin_type != SUPER_ADMIN and contest.created_by != request.user:
+            if request.user.admin_type != SUPER_ADMIN and contest.created_by != request.user and contest_problem.created_by != request.user:
                 return error_response(u"比赛不存在")
             contest_problem.title = data["title"]
             contest_problem.description = data["description"]
