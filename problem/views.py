@@ -420,7 +420,7 @@ def problem_list_page(request, page=1):
             return error_page(request, u"标签不存在")
         problems = tag.problem_set.all().filter(visible=True)
 
-    paginator = Paginator(problems, 3)
+    paginator = Paginator(problems, 1)
     try:
         current_page = paginator.page(int(page))
     except Exception:
@@ -428,7 +428,24 @@ def problem_list_page(request, page=1):
 
     previous_page = next_page =  None
 
-    # print page_count
+    # 计算可视范围
+
+    display_range = 10
+    display_range = display_range + 1 
+    
+    page_display_range = []
+
+    print int(page)
+
+    for x in paginator.page_range:
+    	if (int(page)/display_range == x/display_range or int(page)/display_range == (x+1)/display_range or int(page)/display_range == (x-1)/display_range ) :
+    		page_display_range.append(x)
+
+    print page_display_range
+
+    
+
+    # print current_page
 
     try:
     	previous_page = current_page.previous_page_number()
@@ -446,7 +463,7 @@ def problem_list_page(request, page=1):
 
     return render(request, "oj/problem/problem_list.html",
                   {"problems": current_page, "page": int(page),
-                   "previous_page": previous_page, "next_page": next_page,"page_count":paginator.num_pages,
-                   "paginator":paginator,
+                   "previous_page": previous_page, "next_page": next_page,"page_count":paginator.count,
+                   "paginator":paginator,"page_display_range":page_display_range,
                    "keyword": keyword, "tag": tag_text,
                    "tags": tags, "difficulty_order": difficulty_order})
