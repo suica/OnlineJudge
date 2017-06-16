@@ -420,7 +420,7 @@ def problem_list_page(request, page=1):
             return error_page(request, u"标签不存在")
         problems = tag.problem_set.all().filter(visible=True)
 
-    paginator = Paginator(problems, 1)
+    paginator = Paginator(problems, 10)
     try:
         current_page = paginator.page(int(page))
     except Exception:
@@ -431,19 +431,19 @@ def problem_list_page(request, page=1):
     # 计算可视范围
 
     display_range = 10
-    display_range = display_range + 1 
-    
+    display_range = display_range + 1
+
     page_display_range = []
 
-    print int(page)
+    # print int(page)
 
     for x in paginator.page_range:
     	if (int(page)/display_range == x/display_range or int(page)/display_range == (x+1)/display_range or int(page)/display_range == (x-1)/display_range ) :
     		page_display_range.append(x)
 
-    print page_display_range
+    # print page_display_range
 
-    
+
 
     # print current_page
 
