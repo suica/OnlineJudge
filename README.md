@@ -35,7 +35,7 @@ TODO：
  - <del>enhancement:分页</del> (2017.6.16完成)
  ![pic](https://github.com/suica/OnlineJudge/blob/master/screen_capture/page.png)
  - <del>bug:普通管理员在编辑比赛题面时出现"比赛不存在"</del> (2017.6.16完成)
- - enhancement:昵称系统 (2017.6.16初步实现)
+ - <del>enhancement:昵称系统</del> (2017.6.16初步实现)(2017.6.17理论实现)
  ![pic](https://github.com/suica/OnlineJudge/blob/master/screen_capture/nickname1.png)
  ![pic](https://github.com/suica/OnlineJudge/blob/master/screen_capture/nickname2.png)
  - enhancement:赋予比赛创建者查看编辑比赛所有题目的权限
