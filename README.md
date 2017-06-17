@@ -38,10 +38,13 @@ TODO：
  - <del>enhancement:昵称系统</del> (2017.6.16初步实现)(2017.6.17理论实现)
  ![pic](https://github.com/suica/OnlineJudge/blob/master/screen_capture/nickname1.png)
  ![pic](https://github.com/suica/OnlineJudge/blob/master/screen_capture/nickname2.png)
+ - enhancement:讨论系统
+ - enhancement:比赛中的"Clarification"即"澄清"系统
+ - enhancement:比赛rejudge
  - enhancement:赋予比赛创建者查看编辑比赛所有题目的权限
  - enhancement: 题目通过数据的统计
- - enhancement:比赛中的"Clarification"即"澄清"系统
- - enhancement:讨论系统
+ 
+ 
  
  
  
